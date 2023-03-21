@@ -1,0 +1,21 @@
+<HTML>
+<script language="javascript"> 
+			
+		function CheckNumber(value)
+		{
+			var re = /^(\+7|7|8)?[\s\-|(]?\(?[489][0-9]{2}\)?[\s\-|)]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
+			var result = re.test(value);
+			if (result) alert("Спасибо за подписку на "+value);
+			else alert("Введите валидный номер, пожалуйста!");
+		}
+	</script>
+<BODY style="font-family: Comic Sans MS; font-size: 14px">
+	<Form name="test">
+
+		<input type="text" name="number"> Введите номер телефона
+		<input type="button" name="Subscribe" onClick="CheckNumber(document.test.number.value); " value="Подписаться"> <br>
+		<input type=submit name="SubmitButton">
+		<input type=reset name="ResetButton">
+	</form>
+</BODY>
+</HTML>

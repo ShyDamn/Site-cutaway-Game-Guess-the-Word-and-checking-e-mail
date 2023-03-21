@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<title>Поле чудес</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<style>
+
+body { background: url(https://cdn.culture.ru/images/fbc3e123-7b37-54ae-9e20-7de4e80a3f11); }
+
+.wrapperBlock{border:solid 2px #CCCCCC;padding:3px 7px;width:450px;}
+.wrapperBlock *{display:inline-block;vertical-align:center;}
+
+H1,H3 {
+  text-shadow:
+    -1px -1px #000,
+    0 1px 0 #444;
+  color: White;
+  transition: all 1s;
+}
+
+H1,H3:hover {
+  text-shadow:
+    -1px -1px #000,
+    0 1px 0 #444;
+  color: White;
+}
+
+H3 {
+color: #E8E8E8;
+}
+
+button {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding: .5em 2em;
+  outline: none;
+  border-width: 2px 0;
+  border-style: solid none;
+  border-color: #FDBE33 #000 #D77206;
+  border-radius: 6px;
+  background: linear-gradient(#F3AE0F, #E38916) #E38916;
+  transition: 0.2s;
+}
+.error{
+    display: none;
+} 
+button:hover { background: linear-gradient(#f5ae00, #f59500) #f5ae00; }
+button:active { background: linear-gradient(#f59500, #f5ae00) #f59500; }
+</style>
+<p><h1>
+Добро пожаловать в игру "Поле чудес"!
+</h1>
+<p>
+</head>
+<body>
+<p><h3>
+    <label id="hint"></label><br>
+    <input type="text" id="secret" size="20" readonly>
+	</h3>
+</p>
+<p class="ui">
+    <input type="text" id="letter" size="3" maxlength="1">
+    <button id="tryit">Проверить букву</button>
+</p>
+<p class="message"></p>
+<p id="result">
+    <label><h3>Кол-во попыток:</h3></label>
+    <input type="text" id="numretries" size="5" value="0" readonly>
+</p>
+<p><h1>
+Инструкция:
+</h1>
+<h3>
+Чтобы начать игру, прочитайте загадку сверху, 
+<br>
+а затем попытайтесь правильно угадать букву,
+<br> 
+и так, пока не отгадаете всё слово, 
+<br>
+и так попытка за попыткой! Удачи!
+</h3>
+</p>
+ <form action="http://www2.cs.vsu.ru/~shubin_d_a/" target="_blank">
+<button class="button">На главную</button>
+</form>
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+<script src="./scripts/script.js"></script>
+</body>
+</html>

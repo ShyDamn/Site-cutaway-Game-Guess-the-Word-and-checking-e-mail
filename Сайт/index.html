@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<!--
+	Aerial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Shubin_d_a</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		
+		<script>
+		document.oncontextmenu = cmenu; function cmenu() { return false; }
+		</script>
+
+
+		<script>
+		function preventSelection(element){
+		var preventSelection = false;
+		function addHandler(element, event, handler){
+		if (element.attachEvent) element.attachEvent('on' + event, handler);
+		else if (element.addEventListener) element.addEventListener(event, handler, false);  }
+		function removeSelection(){
+		if (window.getSelection) { window.getSelection().removeAllRanges(); }
+		else if (document.selection && document.selection.clear)
+		document.selection.clear();
+		}
+		
+		addHandler(element, 'mousemove', function(){ if(preventSelection) removeSelection(); });
+		addHandler(element, 'mousedown', function(event){ var event = event || window.event; var sender = event.target || event.srcElement; preventSelection = !sender.tagName.match(/INPUT|TEXTAREA/i) ;});
+
+ 
+		function killCtrlA(event){
+		var event = event || window.event;
+		var sender = event.target || event.srcElement;
+		if (sender.tagName.match(/INPUT|TEXTAREA/i)) return;
+		var key = event.keyCode || event.which;
+		if ((event.ctrlKey && key == 'U'.charCodeAt(0)) || (event.ctrlKey && key == 'A'.charCodeAt(0)) || (event.ctrlKey && key == 'S'.charCodeAt(0)))  // 'A'.charCodeAt(0) можно заменить на 65
+		{ removeSelection();
+		if (event.preventDefault) event.preventDefault();
+		else event.returnValue = false;}}
+		addHandler(element, 'keydown', killCtrlA);
+		addHandler(element, 'keyup', killCtrlA);
+		}
+		preventSelection(document);
+		</script>
+		
+	</head>
+	<body class="loading">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+
+				
+					<header id="header">
+					    
+						<span class="circle-image">
+						<img src="assets/your-image.jpg" alt="" draggable="false"/>
+						</span>
+						<h1>Danila Shubin</h1>
+						<p>Web-Developer &nbsp;&bull;&nbsp; Manager &nbsp;&bull;&nbsp; Student</p>
+						<nav>
+							<ul>
+								<li><a href="https://github.com/ninelines-team" target="_blank" class="fa fa-github"><span class="label">Instagram</span></a></li>
+								<li><a href="https://vk.com/fandomdan" target="_blank" class="icon fa-vk"><span class="label">VK</span></a></li>
+								<li><a href="https://wa.me/79515489740" target="_blank" class="icon fa-whatsapp"><span class="label">Github</span></a></li>
+								<li><a href="mailto:den03062003@gmail.com" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+								<li><a href ="http://www2.cs.vsu.ru/~shubin_d_a/task.html" class="icon fa-gamepad"><span class="label">Play the Towns</span></a></li>
+							</ul>
+						</nav>
+					</header>
+
+				
+					<footer id="footer">
+						<span class="copyright">Design by 2022.
+						<span class="trfed">Time is</span>
+						<script>
+						setInterval(function() {
+						var time = new Date();
+						if(time.getHours() < 10) var getHours = "0" + time.getHours(); else getHours = time.getHours();
+						if(time.getMinutes() < 10) var getMinutes = "0" + time.getMinutes(); else getMinutes = time.getMinutes();
+						if(time.getSeconds() < 10) var getSeconds = "0" + time.getSeconds(); else getSeconds = time.getSeconds();
+						time = getHours + ":" + getMinutes + ":" + getSeconds;
+						document.querySelector('.trfed').innerHTML = time;
+						}, 1000);
+						</script>
+						</span>
+					</footer>
+
+			</div>
+		</div>
+		
+		<script>
+			window.onload = function() { document.body.className = ''; }
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+		</script>
+	</body>
+</html>
